@@ -1,0 +1,40 @@
+
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+eclipse.project.name = appName + '-core'
+
+repositories {
+  mavenCentral()
+  maven { url 'https://jitpack.io' }  // Add JitPack to resolve these dependencies
+}
+
+dependencies {
+  // Core LibGDX dependencies
+  api "com.badlogicgames.gdx:gdx:$gdxVersion"
+  api "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
+
+  // Add dependencies for libgdx-utils and libgdx-utils-box2d from JitPack
+  api "com.github.tommyettinger:libgdx-utils-box2d:$utilsBox2dVersion"
+  api "com.github.tommyettinger:libgdx-utils:$utilsVersion"
+
+  // LibGDX core and backend for LWJGL3
+  implementation "com.badlogicgames.gdx:gdx:$gdxVersion"
+  implementation "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
+
+  // JUnit 5 dependencies for testing
+  testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+  testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+}
+
+test {
+  useJUnitPlatform()  // Ensure tests run with JUnit 5
+}
+
+// Additional dependencies for Graal Native if enabled
+  if (enableGraalNative == 'true') {
+    implementation "io.github.berstanio:gdx-svmhelper-annotations:$graalHelperVersion"
+  }
+
+
+tasks.withType(JavaCompile).configureEach {
+  options.encoding = 'UTF-8'
+}
