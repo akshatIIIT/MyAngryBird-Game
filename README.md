@@ -1,9 +1,6 @@
 
 # MyAngryBird-Game
-this is an ongoing project  i will be uploading the code in few days.
-
-Demo Video is available you can see it.
-
+I have a created a well Known game known as Angry Bird in java using OOPS concept and various Libraries and FrameWorks. I have also attached a recording of demo video along with code,hope you likes it.
 
 # Tech Stack
 1. Frameworks and Libraries
