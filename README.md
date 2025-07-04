@@ -1,75 +1,95 @@
+# 🐦 MyAngryBird Game (Java + LibGDX)
 
-# MyAngryBird-Game
-I have a created a well Known game known as Angry Bird in java using OOPS concept and various Libraries and FrameWorks. I have also attached a recording of demo video along with code,hope you likes it.
-# Recordings
-I have uploaded the recordings in the code files, you can go and see there else you can also see here by clicking this Link- https://go.screenpal.com/watch/cT1ZqCnXMk5
+A clone of the popular **Angry Birds** game, created in **Java** using **LibGDX**, **Box2D**, and core **OOP design principles**. This project demonstrates a complete 2D game development workflow — from game physics and collision logic to rendering and UI.
 
-# Tech Stack
-1. Frameworks and Libraries
-LibGDX: Core framework for game development.
+🎮 [Watch Gameplay Demo](https://go.screenpal.com/watch/cT1ZqCnXMk5)
 
-Box2D: Physics engine for realistic object simulation.
+---
 
-Scene2D: Used for UI elements and input handling.
+## 📽️ Demo
 
-# 3. Programming Language
-Java: Main programming language for game logic and mechanics.
+You can view the demo in either of the following ways:
+- Click the link above ☝️
+- Or check the Recording included in the project files
 
-# 4. Tools
-IntelliJ IDEA: Primary IDE for development.
+---
 
-Gradle: Build automation tool.
+## 🧩 Game Components
 
-GIMP/Photoshop: Used for designing textures and sprites.
+### 🎮 Core Classes
 
-# 5. Testing Framework
+- **Species** – Parent class for all game objects (Bird, Pigs, Wood, Stone)  
+  - Attributes: Texture, Sprite, Physics Body  
+  - Methods: Positioning, Rendering, State Updates
 
-JUnit: For unit testing game components.
+- **Bird** – The projectile launched by the player  
+  - Implements `textureUpdate` interface for real-time texture changes  
 
-# 6. Design Patterns
+- **Pigs** – Target objects  
+  - Implements `textureUpdate` for damage state visuals  
 
-Object-Oriented Programming (OOP) principles such as inheritance, polymorphism, encapsulation, and abstraction.
+- **Wood** – Medium-strength obstacle  
 
-Interface implementation for texture updates.
+- **Stone** – High-strength obstacle
 
-# 7. UI/UX
+### 🧠 Handlers
 
-Custom textures and sprites for a visually appealing game.
+- **LevelHandler** – Loads, resets, and manages game levels  
+- **ContactListener** – Handles collisions and physics events (e.g., bird hits pig or wall)  
 
-Smooth transitions and animations.
+### 🧰 Utility
 
-# Game Components
+- **GameScreen** – Core game loop and screen rendering  
+- **ButtonHandler** – Manages UI buttons (Play, Pause, Restart, etc.)
 
-# 1. Classes
-Core Classes
+---
 
-Species: Parent class for game objects (Bird, Wood, Pigs, Stone).
+## 💻 Tech Stack
 
-Attributes: Texture, Sprite, Body.
+### 🧱 Frameworks & Libraries
+- **LibGDX** – Game framework (cross-platform)
+- **Box2D** – Physics engine for realistic simulation
+- **Scene2D** – For UI and input handling
 
-Methods: Positioning, rendering, updating states.
+### 🧑‍💻 Programming Language
+- **Java** – Main language for game logic and mechanics
 
-Child Classes
+### 🛠️ Tools
+- **IntelliJ IDEA** – Development environment  
+- **Gradle** – Build automation  
+- **GIMP/Photoshop** – For custom textures and sprite design
 
-Bird: Represents the bird launched by the player.
+### ✅ Testing Framework
+- **JUnit** – Unit testing game components
 
-Implements: textureUpdate interface for dynamic texture updates.
+---
 
-Pigs: Represents the target objects.
+## 🧪 Design & Architecture
 
-Implements: textureUpdate interface for damage states.
+- Follows **OOP Principles**: Inheritance, Polymorphism, Encapsulation, Abstraction  
+- Interface-driven texture updates for flexible rendering  
+- Modular class structure for easy level extension and debugging
 
-Wood: Obstacle element.
+---
 
-Stone: Stronger obstacle element.
+## 🎨 UI/UX Highlights
 
-# Handlers
-LevelHandler: Manages game levels, including loading and resetting.
+- Smooth transitions and interactive animations  
+- Custom-designed sprites for birds, pigs, wood, and stone  
+- User-friendly menu system and restart logic  
 
-ContactListener: Handles collision events (e.g., when birds hit pigs or obstacles).
+---
 
-Utility Classes
+## 👨‍🏫 Project Context
+This project was built as part of coursework under Dr. Arun Balaji Buduru at IIIT-Delhi, demonstrating proficiency in game development, object-oriented programming, and real-time simulation.
 
-GameScreen: Core game loop and screen rendering.
+## 🧾 How to Run
 
-ButtonHandler: Manages UI buttons like "Play," "Pause," "Restart."
+> Make sure you have Java and Gradle installed.
+
+```bash
+git clone https://github.com/yourusername/MyAngryBird-Game.git
+cd MyAngryBird-Game
+./gradlew desktop:run
+
+
